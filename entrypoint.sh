@@ -33,4 +33,6 @@ mv ${ACC_HOME}/out/host-key.pem ${ACC_HOME}/out/${KEY_FILE}
 if [ ! -z $GITHUB_WORKSPACE ]
 then
   cp ${ACC_HOME}/out/${CERT_FILE} ${ACC_HOME}/out/${KEY_FILE} ${ACC_HOME}/out/${CHAIN_FILE} $GITHUB_WORKSPACE
+  # Make the key readable by all.
+  chmod 644 ${GITHUB_WORKSPACE}/${KEY_FILE}
 fi
